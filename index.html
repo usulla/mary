@@ -72,7 +72,36 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1 id="homeHeading">Your Favorite Source of Free Bootstrap Themes</h1>
+              <h1 id="homeHeading"><pre id="demo"></pre></h1>
+                <script type="text/javascript">
+
+        function writeTextByJS(id, text, speed){
+
+            var ele = document.getElementById(id),
+                txt = text.join("").split("");
+
+            var interval = setInterval(function(){
+
+                if(!txt[0]){
+
+                    return clearInterval(interval);
+                };
+
+                ele.innerHTML += txt.shift();
+            }, speed != undefined ? speed : 100);
+
+            return false;
+        };
+
+        writeTextByJS(
+            "demo",
+            [
+                "Создание интернет-магазинов\n",
+                "\n",
+                "Сухарева Мария"
+            ]
+        );
+    </script>
                 <hr>
                 <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
                 <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
